@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sliding Calculator</title>
+        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="range.css" type="text/css" rel="stylesheet"/>
+        <link href="styles.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript" src="main.js" defer></script>
+    </head>
+
+    <body>
+        <div class="calculator">
+            <!-- Target Compensation: Box + Slider -->
+            <div class="calculator tc_box">
+                <p id="target" style="margin-top: 30px;"> Target Compensation ($) </p>
+                <input id="text-input" type="text" placeholder="Target ($)" value="325,000"/>
+
+                <div class="slider-container">
+                    <div class="section-wrapper">
+                        <div class="slider-wrapper">
+                            <label class="range-label" for="range_tc"> </label>
+                              <input id="range_tc" type="range" min="0.0" max="650000" value="325000.0" step="1000"/>
+                            <p class="range-value" id="tc-out"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compensation component sliders: Salary/Equity/Bonus -->
+            <div class="slider-container tc_box">
+                <div class="section-wrapper">
+                    <div class="slider-wrapper">
+                        <label class="range-label" for="range1">Salary </label>
+                        <input id="range1" type="range" min="0.0" max="350000" value="175000.0" step="1000"/>
+                        <p class="range-value" id="r1-out"></p>
+                    </div>
+                    <div class="section-text-wrapper">
+                        <label class="text-label" for="t-bonus">Target bonus (%):</label>
+                        <input id="t_bonus" class="text-input" type="text" placeholder="%" value="10"/>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="section-wrapper">
+                    <div class="slider-wrapper">
+                        <label class="range-label" for="range2">Equity</label>
+                        <input id="range2" type="range" min="0.0" max="800000" value="400000.0" step="5000"/>
+                        <p class="range-value" id="r2-out"></p>
+                    </div>
+                    <div class="section-text-wrapper">
+                        <label class="text-label" for="vesting">Vesting period (years):</label>
+                        <input id="vesting" class="text-input" type="number" min=1 placeholder="Years" value="4"/>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="section-wrapper">
+                    <div class="slider-wrapper">
+                        <label class="range-label" for="range3">Sign-on</label>
+                        <input id="range3" type="range" min="0.0" max="130000" value="65000.0" step="1000"/>
+                        <p class="range-value" id="r3-out"></p>
+                    </div>
+                    <div class="section-text-wrapper">
+                        <label class="text-label" for="amortize">Amortization (years):</label>
+                        <input id="amortize" class="text-input" type="number" min=1 placeholder="Years" value="2"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computed results -->
+            <div class="tc_box" style="margin-bottom: 15px;">
+
+                <p id="tc-text"> <span id="tc-result">Sum: $325,000</span></p>
+                <p id="result-text"> <span id="result">Surplus: $0</span></p>
+
+                <div style="width: 75vw; display: flex; flex-direction: column; align-items: center; border: 1px;">
+                  <h3 style="font-family: Karla; font-weight: bold; padding: 2px;"> Compensation Breakdown </h3>
+                  <table cellpadding="2" cellspacing="0" class="results-table">
+                    <tbody style="display: table-row-group; vertical-align: middle; border-color: inherit;">
+                      <tr>
+                          <td>Component</td>
+                          <td>Amount</td>
+                      </tr>
+                      <tr>
+                          <td>Salary</td>
+                          <td id="td_salary">$175,000</td>
+                      </tr>
+                      <tr>
+                          <td>Performance Bonus</td>
+                          <td id="td_perfbonus">$65,000</td>
+                      </tr>
+                      <tr>
+                          <td>Vesting Equity</td>
+                          <td id="td_equity_vest">$100,000</td>
+                      </tr>
+                      <tr>
+                          <td>Sign-on (amortized)</td>
+                          <td id="td_sign_on_amort">$32,500</td>
+                      </tr>
+                      <tr>
+                          <td style="text-align:right; padding-right: 10px; font-weight:700; border-top:1px dashed #999;">Total:</td>
+                          <td id="td_tc" style="border-top:1px dashed #999;">$325,000</td>
+                      </tr>
+                      <tr>
+                          <td style="text-align:right; padding-right: 10px; font-weight:700;">Target:</td>
+                          <td id="td_target">$325,000</td>
+                      </tr>
+                      <tr>
+                          <td id="td_gap_label" style="text-align:right; padding-right: 10px; font-weight:700;">Surplus/Shortfall:</td>
+                          <td id="td_gap">$0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

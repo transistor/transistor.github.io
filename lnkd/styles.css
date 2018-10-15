@@ -1,0 +1,198 @@
+/* reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* main */
+
+p, input, label {
+    font-size: 20px;
+    font-family: Karla;
+    /*font-family: 'Open Sans', sans-serif;*/
+    -webkit-font-smoothing: antialiased;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+}
+
+.tc_box {
+    height: auto;
+    /*width: auto;*/
+    width: 75vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-contents: center;
+    align-items: center;
+
+    margin-top: 10px;
+    border: 1px solid rgba(0,160,220,0.75);
+}
+
+#target {
+    margin-bottom: 10px;
+}
+
+#text-input {
+    width: 15vw;
+    padding: 10px;
+    margin-bottom: 0px;
+    outline: none;
+
+    text-align: center;
+    font-family: Karla;
+    font-size: 130%;
+}
+
+#tc-text {
+    margin-top: 30px;
+}
+
+#result-text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 18vh; */
+    height: auto;
+    padding: 15px 0px 15px 0px;
+}
+
+.section-wrapper .text-input {
+    width: 5vw;
+    padding: 5px;
+    outline: none;
+
+    text-align: center;
+    font-family: Karla;
+}
+
+.slider-wrapper {
+    width: 65vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.range-label {
+    width: 6vw;
+    font-weight: bold;
+}
+
+.range-value {
+    width: 6vw;
+}
+
+.slider-wrapper input[type="range"] {
+    width: 50vw;
+    margin-left: -10px;
+}
+
+.text-label {
+    margin-right: 20px;
+}
+
+hr {
+    width: 75vw;
+    border: 0;
+    height: 1px;
+    color: rgba(0,160,220,1.0)
+}
+
+/* Results table */
+.results-table {
+  table-layout: fixed;
+  width: 55vw;
+
+  border: 1px solid #ccc;
+  padding: 0px 8px;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color:#333;
+  font-weight: 400;
+}
+
+tr:first-child {
+    font-size: 115%;
+    font-weight: 600;
+    border-top: none;
+}
+
+td, th {
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
+
+/* Results tables 2 */
+table.table {
+  width: 65vw;
+  border: 1px solid #ccc;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 0.25em;
+}
+
+@media screen and (max-width: 800px) {
+  tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border: 1px solid rgba(3,3,3,0.2);
+  }
+
+  td, th {
+    flex: 1 1 150px;
+    border: 0.5px solid rgba(3,3,3,0.2);
+  }
+
+}
+
+* { box-model: border-box; font-family: 'Karla'; }
